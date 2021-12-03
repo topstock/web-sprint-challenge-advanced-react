@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios";
 
-class useForm extends React.Component {
-    state = {
-        data,
-        setData
+const useForm = (initialValues) => { 
+    const [values, setValues] = useState(initialValues);
+    
+      
+    const handleClick = () => {
+        axios.get(`http://localhost:3333/plants`)
+            .then( res => {
+              console.log(res);
+            })
     }
 
-    handleClick = (e) => {
-        e.preventDefault();
-        setData(
-            axios.get(`http://localhost:3333/plants`)
-              .then( res => res)
-        );
-    };
-    return ( 
-        [data, setData] 
-        )
+    return [ handleClick, values, setValues ]
 }
 
-export default useForm
+export default useForm;
