@@ -1,18 +1,22 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
-const useForm = (initialValues) => { 
-    const [values, setValues] = useState(initialValues);
-    
-      
-    const handleClick = () => {
-        axios.get(`http://localhost:3333/plants`)
-            .then( res => {
-              console.log(res);
-            })
-    }
+const useForm = (initialValue, isShowSuccessMessage) => { 
+  const [values, setValues] = useState(initialValue);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(isShowSuccessMessage);
+  
+  const handleFormChanges = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
 
-    return [ handleClick, values, setValues ]
+  const showSubmitResult = () => {
+    setShowSuccessMessage(true);
+  }
+
+  return [ 
+    values, 
+    showSuccessMessage,
+    handleFormChanges,
+    showSubmitResult ]
 }
 
 export default useForm;
