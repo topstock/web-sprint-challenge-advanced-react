@@ -84,9 +84,9 @@ In this project, you will build the retrieve data from a public api, add in a fa
 
 ### Testing the Checkout Form
 * [X] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
-* [ ] Fill out code necessary to test that that Checkout form renders without errors.
-* [ ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
-* [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
+* [X] Fill out code necessary to test that that Checkout form renders without errors.
+* [X] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
+* [X] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
 ## Important Notes:
 * Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
@@ -107,19 +107,41 @@ test("displays plants in cart", () => {
 ```
 
 ## Submission format
-* [ ] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
-* [ ] Check Codegrade before the deadline to compare its results against your local tests.
-* [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
+* [X] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
+* [X] Check Codegrade before the deadline to compare its results against your local tests.
+* [X] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more 
+information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [X] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
-Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
+Be prepared to demonstrate your understanding of this week's concepts by answering questions on 
+the following topics. Add your answers below.
 
 1. What are the main differences between a stateful and a functional component?
 
+  Answer: A stateful component and a functional component differ in function, use, and composition. 
+  A stateful component includes data that updates to the DOM and dynamically loads components based 
+  on changes to that data, whereas a functional component only responds to data prior to initial render. 
+  A Functional component is usually made for ui and static structures, and does not rely heavily on React.  
+  A stateful components is built on React.js Hooks and adds features and functionality to websites.  
+
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
+
+  Answer: componentWillMount() is called before the first render.  componentWillUpdate() is called once new props or state are 
+  recieved some time after the initial render but before the new render for those changes. 
 
 3. Define stateful logic.
 
+  Answer:  Stateful logic is the set of algorithms that directly generate or alter state. 
+
 4. What are the three step of creating a successful test? What is done in each phase? 
+
+  Answer:  Arrange, Act and Assert are the three A's of winning tests.  
+    Arrange phase: load the object into memory to simulate how it would be used in deployment.
+       - render()
+    Act phase: query elements and simulate user interactions and 
+      find elements that have been changed or created by those interactions.
+       - get, find, query, userEven
+    Assert: Claim the successessful DOM or the right values of the elements' properties.
+       - expect()
